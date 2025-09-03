@@ -1,12 +1,29 @@
-# React + Vite
+# ⚙️ Project Setup & Dependencies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project uses several essential packages to build a responsive, animated, and icon-rich React web application. Below is a list of dependencies used and their purposes:
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📦 Install All Dependencies
 
-## Expanding the ESLint configuration
+```bash
+npm install tailwind-merge
+npm install react-icons
+npm install react-simple-typewriter
+npm install lucide-react
+npm install motion
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📚 Dependency Details
+
+| Package                     | Purpose                                                                                                                |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **tailwind-merge**          | Prevents conflicting Tailwind CSS class names by merging them intelligently.                                           |
+| **react-icons**             | Provides a huge library of popular icon sets like Font Awesome, Feather, etc. ([Docs](https://react-icons.github.io/)) |
+| **react-simple-typewriter** | Creates a typewriter animation effect for text — useful in hero sections and intros.                                   |
+| **lucide-react**            | Icon library with clean, modern SVG icons — built for React.                                                           |
+| **motion**                  | A small and powerful animation library for declarative motion (based on Framer Motion).                                |
+
+
