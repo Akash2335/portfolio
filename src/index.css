@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  scroll-behavior: smooth;
+  animation-delay: 1s;
+}
+/* We can add the custome css on base layer */
+@layer base {
+  /* class selector we select the name*/
+  .nav-item {
+    /* we can add the css property here using tailwind @apply*/
+    @apply block rounded-full transition hover:text-white hover:bg-white/20 text-[15px] font-semibold duration-300 py-1.5 px-4;
+  }
+  .mask-gradient {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(0, 0, 0.9),
+      rgba(0, 0, 0.9),
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(0, 0, 0.9),
+      rgba(0, 0, 0.9),
+      transparent
+    );
+  }
+  .mask-gradient-right{
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        rgba(0,0,0.9),
+        rgba(0,0,0.9),
+        transparent
+    );
+  }
+}
+/* We can add the custome css on component layer */
+@layer utilities {
+  /* class selector we select the name,which existed in tailwindcss default*/
+  .container {
+    @apply lg:max-w-6xl;
+  }
+}
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #20242d;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
