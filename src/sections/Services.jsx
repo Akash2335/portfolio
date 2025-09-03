@@ -37,7 +37,7 @@ const Services = () => {
             initial="hidden"
             whileInView="visible"
             variants={getCardVariant(index)}
-            viewport={{ amount: 0.10 }}
+            viewport={{ once:true,amount: 0.10 }}
           >
             <ServiceCard services={service} />
           </motion.div>

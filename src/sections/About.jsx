@@ -35,7 +35,7 @@ const About = () => {
           className="mt-16 flex flex-col items-center justify-center gap-10 md:flex-row md:gap-12 lg:gap-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{amount: 0.4 }} // 👈 triggers only when 40% is in view
+          viewport={{once:true,amount: 0.4 }} // 👈 triggers only when 40% is in view
         >
           {/* About Image */}
           <motion.img

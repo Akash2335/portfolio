@@ -35,7 +35,7 @@ const Hero = ({ menuOpen }) => {
       className="overflow-hidden pt-24 pb-12 px-4 sm:px-8 md:px-16 lg:px-24"
       initial="hidden"
       whileInView="visible"
-      viewport={{ amount: 0.4 }} // 👈 triggers only when 40% is in view
+      viewport={{once:true, amount: 0.4 }} // 👈 triggers only when 40% is in view
       variants={containerVariants}
     >
       <div

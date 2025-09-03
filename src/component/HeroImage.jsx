@@ -30,7 +30,7 @@ const HeroImage = () => {
         variants={profileImageVariant}
         initial="hidden"
         whileInView="visible" // ← use whileInView instead of animate
-        viewport={{ amount: 0.5 }} // ← trigger when 50% visible, only once
+        viewport={{once:true, amount: 0.5 }} // ← trigger when 50% visible, only once
         className="absolute bottom-10 left-1/2 lg:left-32 transform -translate-x-1/3 object-cover rounded-full shadow-xl
           w-[120px] h-[120px]
           sm:w-[160px] sm:h-[160px]
