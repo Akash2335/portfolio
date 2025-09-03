@@ -59,7 +59,7 @@ const Tape = () => {
     <section className="overflow-x-clip py-20 h-20  lg:py-2 " id="tape">
       <div className="-mx-1 -rotate-3 bg-gradient-to-r from-fuchsia-100 to-cyan-300 shadow-lg shadow-teal-200">
         <div className="mask-gradient-right">
-          <ParallaxText baseVelocity={5}>
+          <ParallaxText baseVelocity={10}>
             {[...Array(2)].map((_, index) => (
               <Fragment key={index}>
                 {words.map((word, wi) => (
