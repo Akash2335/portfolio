@@ -24,16 +24,15 @@ class EmailServices {
   }
 
   sendMail(formData) {
-    console.log("Sending email with data:", formData);
     return new Promise((res, rej) => {
       emailjs
         .send(this.ServiceId, this.TemplateId, formData)
         .then((rep) => {
-          console.log("Email sent successfully", rep);
+          
           res(rep);
         })
         .catch((err) => {
-          console.error("Failed to send email", err);
+
           rej(err);
         });
     });

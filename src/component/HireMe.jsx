@@ -7,9 +7,10 @@ import { EmailServices, EmailDetails } from "../util/EmailServices";
 import CLOSE from "./Close";
 import Button from "./Button";
 import INPUT from "./Input";
+import Toaster from "./Toaster";
 
 const HIREME = () => {
-  const { hrDetail, setHrDetails, isHireMe, setIsHireMe } =
+  const { hrDetail, setHrDetails, isHireMe, setIsHireMe, setToster } =
     useContext(CommonContext);
 
   const [inputError, setInputError] = useState({ email: false, mobile: false });
@@ -63,19 +64,28 @@ const HIREME = () => {
     );
 
     try {
+      setIsHireMe(false);
       await emailService.sendMail(emailDetailsHr);
       await emailService.sendMail(emailDetailsMe);
       setHrDetails({ email: "", mobile: "" });
-      setIsHireMe(false);
+      setToster( {
+        Message: `✅ Mail sent successfully!\nPlease check your inbox.`,
+        close: true,
+        variant: "success",
+      } );
     } catch (error) {
-      console.error(error);
+      setToster({
+        Message: `😮 Opps... maile faild to send`,
+        close: true,
+        variant: "false",
+      });
     }
   };
 
   return (
     // 👇 Backdrop wrapper (closes modal on outside click)
     <div
-      className="fixed inset-0 z-50 bg-black/50 flex justify-center items-center"
+      className={`fixed inset-0 z-50 bg-black/50 flex justify-center items-center `}
       onClick={() => setIsHireMe(false)}
     >
       {/* 👇 Modal box (stops inner click from bubbling) */}

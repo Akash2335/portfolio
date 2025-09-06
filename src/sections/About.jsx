@@ -2,8 +2,11 @@ import SectionTitle from "../component/SectionTitle";
 import userImage1 from "../../src/assets/Akash.png";
 import Button from "../component/Button";
 import { motion } from "framer-motion";
+import { CommonContext, downloadLink } from "../contens";
+import { useContext } from "react";
 
 const About = () => {
+  const { isHireMe, setIsHireMe } = useContext(CommonContext);
   const aboutImageVariant = {
     hidden: { x: -200, opacity: 0 },
     visible: {
@@ -35,7 +38,7 @@ const About = () => {
           className="mt-16 flex flex-col items-center justify-center gap-10 md:flex-row md:gap-12 lg:gap-16"
           initial="hidden"
           whileInView="visible"
-          viewport={{once:true,amount: 0.4 }} // 👈 triggers only when 40% is in view
+          viewport={{ once: true, amount: 0.4 }} // 👈 triggers only when 40% is in view
         >
           {/* About Image */}
           <motion.img
@@ -60,9 +63,13 @@ const About = () => {
                 impactful, secure, and scalable solutions...
               </p>
             </div>
+            <div className="mb-20"></div>
 
-            <div>
-              <Button className="mt-6 px-6 py-2 text-sm sm:text-base sm:px-8 sm:py-3">
+            <div onClick={() => setIsHireMe(!isHireMe)}>
+              <Button
+                variant="outline"
+                className=" text-sm  sm:text-base sm:px-8 sm:py-3"
+              >
                 Hire Me
               </Button>
             </div>

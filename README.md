@@ -12,6 +12,10 @@ npm install react-icons
 npm install react-simple-typewriter
 npm install lucide-react
 npm install motion
+npm install --save-dev jest @testing-library/react @testing-library/jest-dom @testing-library/user-event babel-jest
+npm install --save-dev @babel/preset-env @babel/preset-react babel-jest
+npm install --save-dev react-test-renderer
+
 ```
 
 ---

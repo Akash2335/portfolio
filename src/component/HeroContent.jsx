@@ -1,14 +1,15 @@
 import { Typewriter } from "react-simple-typewriter";
-import SplitText from "gsap/src/SplitText"; 
 import Button from "./Button";
-import { motion, scale } from "framer-motion";
+import { motion } from "framer-motion";
 import { CommonContext, downloadLink } from "../contens";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import HIREME from "./HireMe";
-import CLOSE from "./Close";
-const HeroContent = ( { variants } ) => {
-  const { closeTabe, setCloseTab, isHireMe, setIsHireMe } =
-    useContext(CommonContext);
+
+const HeroContent = ({ variants }) => {
+  const { isHireMe, setIsHireMe, setToster } = useContext(CommonContext);
+
+
+
   return (
     <motion.div
       variants={variants}
@@ -55,29 +56,26 @@ const HeroContent = ( { variants } ) => {
         <div onClick={() => setIsHireMe(!isHireMe)}>
           <Button>Hire Me</Button>
         </div>
+
+        {/* ✅ This button will both download and show toaster */}
         <Button
           variant="outline"
-          isDownload="true"
-          href={downloadLink[0].Resume}
+          isDownload={true}
+          href={ downloadLink[ 0 ].Resume }
+          target="self"
         >
           My Resume
         </Button>
-        {isHireMe ? (
-          <div
-            className={`${isHireMe ? "block" : "hidden"} fixed inset-0 z-50`}
-          >
-            <div className="w-full h-full bg-slate-900 opacity-60 absolute " />
-            <div
-              onClick={() => setIsHireMe(!isHireMe)}
-              className="cursor-pointer"
-            >
-              <HIREME />
-            </div>
-          </div>
-        ) : (
-          ""
-        )}
       </div>
+
+      {isHireMe && (
+        <div className="fixed inset-0 z-50">
+          <div className="w-full h-full bg-slate-900 opacity-60 absolute" />
+          <div onClick={() => setIsHireMe(false)} className="cursor-pointer">
+            <HIREME />
+          </div>
+        </div>
+      )}
     </motion.div>
   );
 };

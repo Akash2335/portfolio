@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { twMerge } from "tailwind-merge";
+import { CommonContext } from "../contens";
 
 const Button = ({
   children,
   variant = "primary",
   className,
   isDownload = false,
-  href = "#", // default link
-  target = "_blanck",
-  event
+  href = "#",
+  target = "_blank",
+  event,
 }) => {
+  const { setToster } = useContext(CommonContext);
+
   const variants = {
     primary: "bg-blue-400 text-white/90 border-none hover:bg-blue-700",
     outline:
@@ -21,21 +24,43 @@ const Button = ({
     className
   );
 
+  const handleDownloadClick = (e) => {
+    e.preventDefault(); // ✅ Fix is here
+    setToster({
+      Message:
+        "📄 Resume downloaded successfully! Please check your downloads.",
+      close: true, // Should be false to trigger toaster
+      variant: "success",
+    });
+
+    // Optional: Start the download manually
+    const link = document.createElement("a");
+    link.href = href;
+    link.download = true;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   if (isDownload) {
     return (
       <a
         href={href}
-        download
-        target="_self"
+        target={target}
         rel="noopener noreferrer"
         className={mergedClasses}
+        onClick={handleDownloadClick}
       >
         {children}
       </a>
     );
   }
 
-  return <button className={mergedClasses} onClick={event}>{children}</button>;
+  return (
+    <button className={mergedClasses} onClick={event}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;
