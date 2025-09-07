@@ -33,6 +33,7 @@ export const menuItems = [
   { label: "Home", href: "#" },
   { label: "Projects", href: "#projects" },
   { label: "About", href: "#about" },
+  { label: "Expertise", href: "#expertise" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
@@ -165,3 +166,72 @@ export const emailConfig = {
   TEMPLATE_ID: "template_aywext2",
   PUBLIC_KEY: "E83_tzUmONvd8IDEB",
 };
+
+export const Skill = [
+  { name: "React", id: 1 },
+  { name: "HTML", id: 2 },
+  { name: "TAIWINDCSS", id: 3 },
+  { name: "JS", id: 4 },
+  { name: ".NET CORE", id: 5 },
+  { name: "LINQ", id: 6 },
+  { name: "ENTITY FRAMWORK", id: 7 },
+  { name: "GIT", id: 8 },
+  { name: "REDUX", id: 9 },
+];
+
+export const SkillDetails = [
+  {
+    id: 1,
+    EX: 2,
+    message:
+      "⚛️ 2 years of experience building responsive UIs using React and JSX. Strong understanding of component lifecycle and hooks.",
+  },
+  {
+    id: 2,
+    EX: 2,
+    message:
+      "🧱 2 years of solid experience with HTML5, building clean, semantic, and accessible web pages across modern browsers.",
+  },
+  {
+    id: 3,
+    EX: 2,
+    message:
+      "🎨 2 years working with Tailwind CSS to rapidly style modern, responsive designs with a mobile-first approach.",
+  },
+  {
+    id: 4,
+    EX: 2.5,
+    message:
+      "📜 Over 2.5 years of JavaScript experience, including ES6+ features. Skilled in DOM manipulation, async programming, and debugging.",
+  },
+  {
+    id: 5,
+    EX: 3,
+    message:
+      "🖥️ 3+ years of backend development using .NET Core to build RESTful APIs, microservices, and enterprise-grade web applications.",
+  },
+  {
+    id: 6,
+    EX: 2.5,
+    message:
+      "🔍 2.5 years working with LINQ for efficient data querying in .NET applications. Comfortable using it with both Entity Framework and collections.",
+  },
+  {
+    id: 7,
+    EX: 3,
+    message:
+      "🗂️ 3 years of hands-on experience with Entity Framework Core, handling migrations, code-first design, and complex database relationships.",
+  },
+  {
+    id: 8,
+    EX: 2.5,
+    message:
+      "🔧 3+ years using Git for version control. Comfortable with branching, merging, pull requests, and collaborating on large codebases.",
+  },
+  {
+    id: 9,
+    EX: 2.5,
+    message:
+      "🔁 Over 2.5 years of experience using Redux for state management in React apps. Well-versed in reducers, middleware, and dev tools.",
+  },
+];

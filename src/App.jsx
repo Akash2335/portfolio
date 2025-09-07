@@ -10,6 +10,7 @@ import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 import { CommonContext } from "./contens";
 import Toaster from "./component/Toaster";
+import Suggest from "./component/suggest";
 
 
 export default function App() {
@@ -39,13 +40,14 @@ export default function App() {
           setToster,
         }}
       >
-         <Toaster />
+        <Toaster />
         <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Hero menuOpen={menuOpen} />
         {/* This throws during render → automatically caught */}
         <BuggyComponent />
         <Tape />
         <Project />
+        <Suggest />
         <About />
         <Services />
         <Contact />

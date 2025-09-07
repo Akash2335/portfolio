@@ -54,7 +54,7 @@ const Header = ( { menuOpen, setMenuOpen } ) => {
             <Logo />
           </motion.div> 
 
-          <motion.ul className="hidden space-x-4 md:flex" initial='hidden' animate='visible' variants={menuVarients}>
+          <motion.ul className="hidden sm:space-x-1 md:space-x-4 md:flex" initial='hidden' animate='visible' variants={menuVarients}>
             {menuItems.map((item) => (
               <motion.li key={item.href} variants={menuItemVariants}>
                 <a href={item.href} className="nav-item text-white/25">{item.label}</a>
