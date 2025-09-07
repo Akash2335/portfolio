@@ -1,6 +1,6 @@
 import { DiMsqlServer } from "react-icons/di";
 import projectImage from "../assets/project.png";
-import { BiCodeAlt, BiMobileAlt, BiPalette, BiSearchAlt } from "react-icons/bi";
+import { BiCodeAlt, BiPalette } from "react-icons/bi";
 import { FaLinkedin } from "react-icons/fa";
 import {
   MdAddIcCall,
@@ -62,29 +62,54 @@ export const projects = [
   },
 ];
 
+import {
+  BiSearchAlt,
+  BiGitBranch,
+  BiServer,
+  BiLayer,
+} from "react-icons/bi";
+
 export const services = [
   {
-    title: "Web Development",
+    title: "Frontend Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "⚛️ Creating modern, responsive user interfaces using React, Redux, JavaScript, and TailwindCSS. Focused on performance, clean code, and accessibility.",
     icon: BiCodeAlt,
   },
   {
-    title: "Mobile App Development",
+    title: "Backend Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-    icon: BiMobileAlt,
+      "🖥️ Building secure and scalable APIs using .NET Core, LINQ, and Entity Framework. Skilled in RESTful API design and server-side logic.",
+    icon: BiServer,
   },
   {
-    title: "UI/UX Design",
+    title: "Full-Stack Web Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "🌐 Delivering complete web solutions by combining frontend (React, HTML, CSS) with backend (.NET Core, EF). Comfortable handling end-to-end development.",
+    icon: BiLayer,
+  },
+  {
+    title: "UI Design with TailwindCSS",
+    description:
+      "🎨 Designing sleek, mobile-first interfaces using TailwindCSS. Skilled in translating UI/UX mockups into pixel-perfect frontend layouts.",
     icon: BiPalette,
   },
   {
-    title: "SEO",
+    title: "Version Control & Collaboration",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+      "🔧 Using Git and GitHub for source control, branching strategies, and team collaboration. Experienced with pull requests and merge conflict resolution.",
+    icon: BiGitBranch,
+  },
+  {
+    title: "State Management",
+    description:
+      "🔁 Managing complex application state efficiently using Redux. Experienced in writing reducers, actions, and handling middleware for scalable apps.",
+    icon: BiCodeAlt,
+  },
+  {
+    title: "Database Integration",
+    description:
+      "🗂️ Integrating and managing relational databases using Entity Framework. Comfortable with code-first approach, migrations, and data querying via LINQ.",
     icon: BiSearchAlt,
   },
 ];
@@ -92,38 +117,54 @@ export const services = [
 export const contactDetails = [
   {
     id: 1,
-    type: "Email",
+    type: "📧 Email",
     value: "akashbharati2335@gmail.com",
-    link: "akashbharati2335@gmail.com",
+    link: "mailto:akashbharati2335@gmail.com",
     icon: (
       <MdOutlineAlternateEmail
-        className="text-blue-300 font-semibold"
+        className="text-blue-500 hover:text-blue-700 transition duration-200"
         size={20}
       />
     ),
   },
   {
     id: 2,
-    type: "Phone",
+    type: "📞 Phone",
     value: "+91-9834335376",
     link: "tel:+91-9834335376",
-    icon: <MdAddIcCall size={20} />,
+    icon: (
+      <MdAddIcCall
+        className="text-green-600 hover:text-green-800 transition duration-200"
+        size={20}
+      />
+    ),
   },
   {
     id: 3,
-    type: "LinkedIn",
-    value: "linkedin.com",
+    type: "🔗 LinkedIn",
+    value: "linkedin.com/in/akash-bharati-23d35",
     link: "https://www.linkedin.com/in/akash-bharati-23d35",
-    icon: <FaLinkedin size={20} className="hover:text-blue-700" />,
+    icon: (
+      <FaLinkedin
+        className="text-blue-600 hover:text-blue-800 transition duration-200"
+        size={20}
+      />
+    ),
   },
   {
     id: 4,
-    type: "Location",
-    value: "Mumbai ghansoli navi mumbai.",
+    type: "📍 Location",
+    value: "Ghansoli, Navi Mumbai, India",
     link: null,
-    icon: <MdLocationPin size={20} className="hover:text-blue-900" />,
+    icon: (
+      <MdLocationPin
+        className="text-red-500 hover:text-red-700 transition duration-200"
+        size={20}
+      />
+    ),
   },
 ];
+
 
 // Exported array of objects with label and icon component
 export const words = [
