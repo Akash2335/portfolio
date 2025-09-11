@@ -1,5 +1,6 @@
 import { DiMsqlServer } from "react-icons/di";
 import projectImage from "../assets/project.png";
+import portfolio from '../assets/PortFolioWebside.png';
 import { BiCodeAlt, BiPalette } from "react-icons/bi";
 import { FaLinkedin } from "react-icons/fa";
 import {
@@ -33,7 +34,7 @@ export const menuItems = [
   { label: "Home", href: "#" },
   { label: "Projects", href: "#projects" },
   { label: "About", href: "#about" },
-  { label: "Expertise", href: "#expertise" },
+  { label: "Experience", href: "#experience" },
   { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
 ];
@@ -42,7 +43,7 @@ export const projects = [
   {
     id: 1,
     title: "Responsive Portfolio Website",
-    image: projectImage,
+    image: portfolio,
     description:
       "A sleek and fully responsive portfolio website to showcase skills, projects, and experience. Built using HTML, CSS, and JavaScript with modern design practices.",
   },

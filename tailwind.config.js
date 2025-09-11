@@ -9,6 +9,28 @@ export default {
       fontFamily: {
         sans: [ "Cabin", "sans-serif" ],
         serif:["Space Grotesk","sans-serif"],
+      },
+      animation: {
+        confetti:'confettiRise 3s ease-out forwards'
+      },
+      keyframes: {
+        confettiFaill: {
+          '0%': { top: '0%', opacity: 0 },
+          '100%':{top:'100%',opacity:1}
+        },
+        confettiRise: {
+          '0%': {
+            bottom: '0%',
+            left: '0%',
+            opacity: 1,
+            transform:'translateX(0) translateY(0) rotate(0deg)',
+          },
+          '100%': {
+            bottom: '0%',
+            opacity: 0,
+            transform:'translateX(100px) translateY(-300px) rotate(720deg)'
+          }
+        }
       }
     },
     container: {

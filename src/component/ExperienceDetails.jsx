@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
 import { Skill, SkillDetails } from "../contens";
 
-const Suggest = () => {
+const ExperienceDetails = () => {
   const [viewTab, setViewTab] = useState(0);
-  const [tooltipStyle, setTooltipStyle] = useState({top: 0, left: 0 });
+  const [tooltipStyle, setTooltipStyle] = useState({ top: 0, left: 0 });
   const containerRef = useRef(null);
 
   const handleDetails = (e, id) => {
@@ -15,7 +15,7 @@ const Suggest = () => {
 
     // Position tooltip below the item, horizontally centered
     setTooltipStyle({
-      top: itemRect.bottom-200 - containerRect.top, // 8px margin below
+      top: itemRect.bottom - 200 - containerRect.top, // 8px margin below
       left: itemCenter - containerRect.left - tooltipWidth / 2,
     });
 
@@ -26,8 +26,8 @@ const Suggest = () => {
 
   return (
     <div
-      id="expertise"
-      className="flex flex-col items-center w-full min-h-screen bg-gradient-to-br animate-pulse from-slate-900 via-gray-900 to-black py-16 px-4 text-white"
+      id="experience"
+      className="flex flex-col items-center w-full min-h-screen  shadow-gray-300 bg-gradient-to-br animate-pulse from-slate-900 via-gray-900 to-black py-16 px-4 text-white"
       ref={containerRef}
     >
       <h1 className="text-5xl font-light text-white/70 tracking-wide mb-10">
@@ -51,7 +51,7 @@ const Suggest = () => {
         {/* Tooltip */}
         {viewTab !== 0 && detail && (
           <div
-            className="absolute z-10 w-80 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg shadow-lg p-4 text-white/80 font-light text-sm transition-all duration-300"
+            className="absolute z-10 w-80 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg shadow-lg p-4 text-white/80 font-light text-sm transition-all duration-300 animate-bounce "
             style={{
               top: `${tooltipStyle.top}px`,
               left: `${tooltipStyle.left}px`,
@@ -67,4 +67,4 @@ const Suggest = () => {
   );
 };
 
-export default Suggest;
+export default ExperienceDetails;
