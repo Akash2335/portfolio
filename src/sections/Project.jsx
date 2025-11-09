@@ -34,37 +34,35 @@ const getSafeProjects = () => {
 };
 
 const getDefaultProjects = () => [
-  {
-    id: 1,
-    title: "Offline AI Look Platform",
-    description:
-      "Developed an innovative fashion AI platform that provides personalized outfit recommendations using offline AI models. Features virtual try-on, style analysis, and wardrobe management with complete offline functionality.",
-    technologies: [
-      "React",
-      "TypeScript",
-      "TensorFlow.js",
-      "Node.js",
-      "MongoDB",
-      "AWS Lambda",
-      "Computer Vision",
-      "Python",
-      "OpenCV",
-    ],
-    image: "/api/placeholder/400/250",
-    githubUrl: "https://github.com/Akash2335/aiInterView",
-    liveUrl: "https://ai-inter-view-xi.vercel.app/login",
-    featured: true,
-    category: "ai-ml",
-    duration: "9 months",
-    impact:
-      "Revolutionized fashion shopping experience with AI-powered recommendations",
-    achievements: [
-      "Offline AI model deployment",
-      "Real-time virtual try-on",
-      "Style analysis algorithms",
-      "Personalized recommendations",
-    ],
-  },
+ {
+  "id": 1,
+  "title": "Offline AI Interview Assistant",
+  "description": "Developed a voice-driven offline AI interview assistant capable of conducting realistic interview simulations using local AI models. Includes automated questioning, response analysis, and performance scoring without any cloud dependency.",
+  "technologies": [
+    "React",
+    "TypeScript",
+    "TensorFlow.js",
+    "Node.js",
+    "Python",
+    "Web Speech API",
+    "Audio Processing",
+    "MongoDB",
+    "AWS Lambda"
+  ],
+  "image": "/api/placeholder/400/250",
+  "githubUrl": "https://github.com/Akash2335/aiInterView",
+  "liveUrl": "https://ai-inter-view-xi.vercel.app/login",
+  "featured": true,
+  "category": "ai-ml",
+  "duration": "9 months",
+  "impact": "Enabled realistic, private, and low-latency interview preparation through fully offline AI-driven simulations.",
+  "achievements": [
+    "Voice-driven interview interaction",
+    "Offline AI model inference",
+    "Role-based interview simulation flows",
+    "Real-time performance analysis and scoring"
+  ]
+},
   {
     id: 2,
     title: "AWS Cloud Deployment",
