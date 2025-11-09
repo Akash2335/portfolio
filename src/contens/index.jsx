@@ -31,11 +31,12 @@ import { createContext } from "react";
 export const CommonContext = createContext();
 
 export const menuItems = [
-  { label: "Home", href: "#" },
+  { label: "Home", href: "#hero" },
   { label: "Projects", href: "#projects" },
   { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
+  { label: "Expertise", href: "#experience" },
   { label: "Services", href: "#services" },
+  { label: "Portfolio", href: "#software" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -68,6 +69,7 @@ import {
   BiGitBranch,
   BiServer,
   BiLayer,
+  BiCloud, // Add this import
 } from "react-icons/bi";
 
 export const services = [
@@ -88,6 +90,12 @@ export const services = [
     description:
       "🌐 Delivering complete web solutions by combining frontend (React, HTML, CSS) with backend (.NET Core, EF). Comfortable handling end-to-end development.",
     icon: BiLayer,
+  },
+  {
+    title: "AWS Cloud Services",
+    description:
+      "☁️ Deploying and managing applications on AWS cloud infrastructure. Experienced with EC2 for compute, S3 for storage, and Lambda for serverless computing.",
+    icon: BiCloud,
   },
   {
     title: "UI Design with TailwindCSS",
@@ -199,7 +207,7 @@ export const words = [
 export const downloadLink = [
   {
     Resume:
-      "https://drive.google.com/uc?export=download&id=1uBpn2E2By-1-8s4nwiwvQsVZu2_6xAqs",
+      "https://drive.google.com/file/d/1gp7fMlQSJwqJmb74fsQQoQLuMCjszk-b/view?usp=drive_link",
   },
 ];
 
@@ -219,6 +227,9 @@ export const Skill = [
   { name: "ENTITY FRAMWORK", id: 7 },
   { name: "GIT", id: 8 },
   { name: "REDUX", id: 9 },
+  { name: "Aws", id: 10 },
+  { name: "Rest Api", id: 12 },
+  { name: "Web Api", id: 11 },
 ];
 
 export const SkillDetails = [
@@ -226,31 +237,31 @@ export const SkillDetails = [
     id: 1,
     EX: 2,
     message:
-      "⚛️ 2 years of experience building responsive UIs using React and JSX. Strong understanding of component lifecycle and hooks.",
+      "⚛️ 2.5 years of experience building responsive UIs using React and JSX. Strong understanding of component lifecycle and hooks.",
   },
   {
     id: 2,
     EX: 2,
     message:
-      "🧱 2 years of solid experience with HTML5, building clean, semantic, and accessible web pages across modern browsers.",
+      "🧱 3 years of solid experience with HTML5, building clean, semantic, and accessible web pages across modern browsers.",
   },
   {
     id: 3,
     EX: 2,
     message:
-      "🎨 2 years working with Tailwind CSS to rapidly style modern, responsive designs with a mobile-first approach.",
+      "🎨 2.5 years working with Tailwind CSS to rapidly style modern, responsive designs with a mobile-first approach.",
   },
   {
     id: 4,
     EX: 2.5,
     message:
-      "📜 Over 2.5 years of JavaScript experience, including ES6+ features. Skilled in DOM manipulation, async programming, and debugging.",
+      "📜 Over 3.5 years of JavaScript experience, including ES6+ features. Skilled in DOM manipulation, async programming, and debugging.",
   },
   {
     id: 5,
     EX: 3,
     message:
-      "🖥️ 3+ years of backend development using .NET Core to build RESTful APIs, microservices, and enterprise-grade web applications.",
+      "🖥️ 3.2 years of backend development using .NET Core to build RESTful APIs, microservices, and enterprise-grade web applications.",
   },
   {
     id: 6,
@@ -262,7 +273,7 @@ export const SkillDetails = [
     id: 7,
     EX: 3,
     message:
-      "🗂️ 3 years of hands-on experience with Entity Framework Core, handling migrations, code-first design, and complex database relationships.",
+      "🗂️ 2.5 years of hands-on experience with Entity Framework Core, handling migrations, code-first design, and complex database relationships.",
   },
   {
     id: 8,
@@ -275,5 +286,22 @@ export const SkillDetails = [
     EX: 2.5,
     message:
       "🔁 Over 2.5 years of experience using Redux for state management in React apps. Well-versed in reducers, middleware, and dev tools.",
+  },{
+    id: 10,
+    EX: 2.5,
+    message:
+      "☁️ Over 2.5 years of hands-on experience with AWS services including EC2, S3, Lambda, and RDS for cloud infrastructure and deployment.",
+  },
+  {
+    id: 11,
+    EX: 2.5,
+    message:
+      "🌐 Over 3 years of experience designing and consuming RESTful APIs with proper authentication, error handling, and best practices.",
+  },
+  {
+    id: 12,
+    EX: 2.5,
+    message:
+      "⚡ Over 3 years of experience building and integrating Web APIs for various applications and services.",
   },
 ];

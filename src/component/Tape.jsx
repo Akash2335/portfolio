@@ -1,6 +1,5 @@
-import { Fragment, useRef } from "react";
+import { Fragment, useRef, useMemo } from "react";
 import { words } from "../contens";
-import { BiLogoMeta } from "react-icons/bi";
 import {
   motion,
   useScroll,
@@ -12,7 +11,8 @@ import {
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
 
-const ParallaxText = ({ children, baseVelocity = 100 }) => {
+const ParallaxText = ({ children, baseVelocity = 50 }) => {
+  // Reduced base velocity
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -22,7 +22,8 @@ const ParallaxText = ({ children, baseVelocity = 100 }) => {
     stiffness: 400,
   });
 
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
+  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 3], {
+    // Reduced factor
     clamp: false,
   });
 
@@ -44,8 +45,9 @@ const ParallaxText = ({ children, baseVelocity = 100 }) => {
 
   return (
     <div className="overflow-hidden">
-      <motion.div className="flex gap-4" style={{ x }}>
-        {children}
+      <motion.div className="flex gap-3" style={{ x }}>
+        {" "}
+        {/* Reduced gap */}
         {children}
         {children}
         {children}
@@ -55,27 +57,43 @@ const ParallaxText = ({ children, baseVelocity = 100 }) => {
 };
 
 const Tape = () => {
+  // Memoized words array to prevent unnecessary re-renders
+  const memoizedWords = useMemo(() => words, []);
+
+  // Memoized duplicated words for the tape
+  const tapeContent = useMemo(
+    () =>
+      [...Array(2)].map((_, index) => (
+        <Fragment key={index}>
+          {memoizedWords.map((word, wi) => (
+            <div
+              className={`inline-flex items-center gap-3 p-2 ${word.ClassName}`} // Reduced padding and gap
+              key={`${index}-${wi}`}
+            >
+              <span className="text-lg text-gray-600 uppercase font-medium">
+                {" "}
+                {/* Smaller text */}
+                {word.label}
+              </span>
+              {word.icon && <word.icon className="text-gray-700" />}{" "}
+              {/* Safe icon render */}
+            </div>
+          ))}
+        </Fragment>
+      )),
+    [memoizedWords]
+  );
+
   return (
-    <section className="overflow-x-clip py-20 h-20  lg:py-2 " id="tape">
-      <div className="-mx-1 -rotate-3 bg-gradient-to-r from-fuchsia-100 to-cyan-300 shadow-lg shadow-teal-200">
+    <section className="overflow-x-clip py-12 h-16 lg:py-1" id="tape">
+      {" "}
+      {/* Reduced padding */}
+      <div className="-mx-1 -rotate-3 bg-gradient-to-r from-fuchsia-100 to-cyan-300 shadow-lg">
         <div className="mask-gradient-right">
-          <ParallaxText baseVelocity={10}>
-            {[...Array(2)].map((_, index) => (
-              <Fragment key={index}>
-                {words.map((word, wi) => (
-                  <div
-                    className={`inline-flex items-center gap-4 p-3 shadow-2xl shadow-fuchsia-800 ${word.ClassName}`}
-                    key={`${index}-${wi}`}
-                  >
-                    <span className="text-2xl  text-gray-600 uppercase ">
-                      {word.label}
-                    </span>
-                    {/* <BiLogoMeta className="size-8 -rotate-12 text-gray-800" /> */}
-                    {<word.icon />}
-                  </div>
-                ))}
-              </Fragment>
-            ))}
+          <ParallaxText baseVelocity={8}>
+            {" "}
+            {/* Further reduced velocity */}
+            {tapeContent}
           </ParallaxText>
         </div>
       </div>
