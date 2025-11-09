@@ -11,6 +11,7 @@ import Header from "./sections/Header";
 import { CommonContext } from "./contens";
 import Toaster from "./component/Toaster";
 import ScrollProgressBar from "./component/ScrollingProgressBar";
+import { motion } from "framer-motion";
 
 // Error Boundary Component
 const ErrorBoundary = ({ children, fallback }) => {
@@ -211,16 +212,142 @@ export default function App() {
   }, []);
 
   // Early return for site open
+  // Modern site open detection component
   if (siteOpen) {
     return (
-      <div className="h-screen w-screen flex justify-center items-center text-center bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden">
-        <div className="flex justify-center items-center w-80 h-80 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl shadow-2xl shadow-gray-900 font-bold text-2xl text-gray-900 transform transition-all duration-500 hover:scale-105 hover:shadow-xl">
-          This site is already open in another tab.
+      <div className="h-screen w-screen flex justify-center items-center bg-gradient-to-br from-slate-900 via-purple-900/20 to-blue-900 overflow-hidden relative">
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          {/* Floating Particles */}
+          {[...Array(15)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-cyan-400/30 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -40, 0],
+                opacity: [0, 1, 0],
+                scale: [0, 1.5, 0],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 5,
+              }}
+            />
+          ))}
+
+          {/* Gradient Orbs */}
+          <motion.div
+            className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
         </div>
+
+        {/* Main Content */}
+        <motion.div
+          className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-3xl border-2 border-white/20 p-12 shadow-2xl text-center max-w-md mx-4"
+          initial={{ scale: 0.8, opacity: 0, y: 50 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          {/* Warning Icon */}
+          <motion.div
+            className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg"
+            animate={{
+              rotate: [0, 10, -10, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <span className="text-3xl">⚠️</span>
+          </motion.div>
+
+          {/* Title */}
+          <motion.h2
+            className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            Session Already Active
+          </motion.h2>
+
+          {/* Message */}
+          <motion.p
+            className="text-white/80 leading-relaxed mb-6 text-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            This portfolio is already open in another browser tab. Please close
+            the other tab or continue using the existing session.
+          </motion.p>
+
+          {/* Action Button */}
+          <motion.button
+            className="px-8 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl text-white font-semibold shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => window.location.reload()}
+          >
+            <span className="flex items-center gap-2">
+              <span>🔄</span>
+              Refresh Page
+            </span>
+          </motion.button>
+
+          {/* Decorative Elements */}
+          <motion.div
+            className="absolute -top-2 -left-2 w-6 h-6 border-t-2 border-l-2 border-cyan-400/50 rounded-tl-2xl"
+            animate={{
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+            }}
+          />
+          <motion.div
+            className="absolute -bottom-2 -right-2 w-6 h-6 border-b-2 border-r-2 border-orange-400/50 rounded-br-2xl"
+            animate={{
+              opacity: [0.8, 0.3, 0.8],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: 1,
+            }}
+          />
+        </motion.div>
+
+        {/* Footer Note */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/40 text-sm"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          Akash Bharati - Portfolio
+        </motion.div>
       </div>
     );
   }
-
   // Show initial loader
   if (isLoading) {
     return (
